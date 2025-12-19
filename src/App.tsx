@@ -280,32 +280,42 @@ const CTASection = ({ onVisible }: { onVisible: (phase: number) => void }) => {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
             </span>
-            Evento Exclusivo
+            EVENTO AO VIVO • VAGAS LIMITADAS
           </div>
 
           <h2 className="text-3xl md:text-5xl font-bold text-white leading-tight tracking-tight">
-            Como faturei <br className="md:hidden" /> meio milhão <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-500">
-              AO VIVO em 2 horas
-            </span>
+            Agora é a sua chance de entender<br className="md:hidden" />
+            por que você ainda não teve resultado no digital
           </h2>
 
           <div className="h-px w-24 bg-gradient-to-r from-transparent via-slate-500 to-transparent"></div>
 
           <p className="text-slate-400 text-base md:text-lg max-w-lg mx-auto leading-relaxed">
-            Quinta-feira, vou abrir a caixa preta e mostrar <span className="text-slate-200 font-medium">o que realmente faz alguém ter resultado</span> no digital.
+            Nesta quinta-feira, às 20h (horário de Brasília),
+            vou mostrar ao vivo o que realmente separa
+            quem tenta de quem consegue resultado.
+          </p>
+
+          <p className="text-slate-400 text-base md:text-lg max-w-lg mx-auto leading-relaxed">
+            Nada de teoria solta.<br className="md:hidden" />
+            Nada de promessa vazia.<br className="md:hidden" />
+            É a lógica real por trás dos números que você viu nessa página.
           </p>
 
           <button className="group mt-6 relative w-full md:w-auto bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-5 px-10 rounded-xl shadow-[0_0_40px_-10px_rgba(16,185,129,0.5)] transition-all duration-300 transform hover:-translate-y-1 overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:animate-shimmer"></div>
               <div className="flex items-center justify-center gap-3">
                 <Smartphone size={24} />
-                <span className="text-lg">Entrar no grupo VIP</span>
+                <span className="text-lg">Entrar no grupo VIP agora</span>
               </div>
           </button>
           
           <p className="text-xs text-slate-500 mt-2 font-mono">
-            🔒 Acesso liberado apenas para membros do grupo
+            ⚠️ O acesso à aula é liberado apenas para quem entrar no grupo. As vagas podem ser encerradas sem aviso.
+          </p>
+
+          <p className="text-xs text-slate-500 font-mono">
+            Aula ao vivo • Conteúdo exclusivo • Quinta-feira às 20h
           </p>
         </div>
       </div>
@@ -412,6 +422,68 @@ const App = () => {
               isLast={index === storyData.length - 1}
             />
           ))}
+        </div>
+
+        {/* Bloco de conclusão pós-jornada */}
+        <section className="relative w-full max-w-5xl mx-auto mt-24 mb-16 px-4">
+          <div className="absolute inset-0 bg-gradient-to-r from-cyan-600/10 via-slate-900/0 to-emerald-600/10 rounded-3xl blur-3xl opacity-40 pointer-events-none"></div>
+          <div className="relative bg-slate-900/80 border border-slate-800 rounded-3xl p-8 md:p-12 shadow-2xl shadow-black/40 backdrop-blur-sm">
+            <div className="space-y-6 text-slate-200">
+              <div className="space-y-2">
+                <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight">
+                  Agora é a sua vez.
+                </h2>
+                <p className="text-lg text-slate-300">
+                  Se você chegou até aqui, é porque essa história também fala sobre você.
+                </p>
+              </div>
+
+              <div className="space-y-4 text-slate-300 leading-relaxed">
+                <p>Você não leu essa história por acaso.</p>
+                <p>Em algum ponto, você se enxergou nela.</p>
+                <p>Talvez no começo, cheio de dúvidas.</p>
+                <p>Talvez no meio, tentando fazer dar certo e não conseguindo romper.</p>
+                <p>Talvez agora, sentindo que sabe que existe algo maior — mas ainda não conseguiu acessar.</p>
+                <p>Se você quer entrar no digital,</p>
+                <p>ou se já está no jogo, mas ainda não alcançou resultados consistentes,</p>
+                <p>o problema não foi falta de esforço.</p>
+                <p>Foi falta de clareza.</p>
+              </div>
+
+              <div className="space-y-3">
+                <p className="text-white font-semibold">Na aula ao vivo, eu vou abrir a caixa preta.</p>
+                <p className="text-slate-300 leading-relaxed">
+                  Vou te mostrar a lógica real por trás dos resultados que você viu nessa jornada.
+                </p>
+                <p className="text-slate-300 leading-relaxed">
+                  Sem atalhos. <br className="md:hidden" />Sem promessas vazias. <br className="md:hidden" />Sem teoria desconectada da prática.
+                </p>
+              </div>
+
+              <div className="space-y-3">
+                <p className="text-white font-semibold">Quando você sair dessa aula, você não vai ser a mesma pessoa.</p>
+                <p className="text-slate-300 leading-relaxed">Você vai entender:</p>
+                <ul className="list-disc list-inside text-slate-200 space-y-2 pl-1">
+                  <li>por que ainda não deu certo</li>
+                  <li>o que realmente trava os resultados</li>
+                  <li>e o que precisa ser feito para virar o jogo de forma consciente e consistente</li>
+                </ul>
+              </div>
+
+              <div className="space-y-3 text-slate-300 leading-relaxed">
+                <p>
+                  Você vai aprender com alguém que vive isso na prática,
+                  que já teve resultado,
+                  e que conhece o jogo por dentro — não de fora.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Banner repetido do topo para reforço final, mantendo responsivo */}
+        <div className="-mx-6 md:mx-0">
+          <HeroSection />
         </div>
 
         {/* Final CTA */}
