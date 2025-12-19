@@ -233,11 +233,25 @@ const StoryBlock = ({ icon: Icon, text, subtext, highlight = false, isLast = fal
               </div>
             )}
             
-            <h3 className="text-lg text-slate-200 font-medium leading-relaxed">
+            <h3 className="text-xl md:text-2xl text-slate-100 font-semibold leading-snug md:leading-relaxed space-y-2">
               {text.split('\n').map((line: string, i: number) => (
                 <React.Fragment key={i}>
-                  {line}
-                  <br />
+                  <span className="block">
+                    {line.split(/(R\$[0-9\\.]+\\s?mil|R\\$[0-9\\.]+|[0-9]+\\s?anos?\\s?e\\s?[0-9]+\\s?meses?|[0-9]+\\s?meses?|resultado[s]?|faturamento|vendas?|expert)/gi).map((chunk, idx) => {
+                      const isKeyword = /(R\$[0-9\.]+\s?mil|R\$[0-9\.]+|[0-9]+\s?anos?\s?e\s?[0-9]+\s?meses?|[0-9]+\s?meses?|resultado[s]?|faturamento|vendas?|expert)/i.test(chunk);
+                      return (
+                        <React.Fragment key={idx}>
+                          {isKeyword ? (
+                            <span className={`${accentColor === 'orange' ? 'text-orange-200' : 'text-cyan-200'} font-bold`}>
+                              {chunk}
+                            </span>
+                          ) : (
+                            chunk
+                          )}
+                        </React.Fragment>
+                      );
+                    })}
+                  </span>
                 </React.Fragment>
               ))}
             </h3>
@@ -423,6 +437,18 @@ const App = () => {
             />
           ))}
         </div>
+
+        {/* Imagem de transição entre a jornada e a virada final */}
+        <section className="relative w-full max-w-4xl mx-auto mt-16 mb-12 px-4 animate-fade-in-up">
+          <div className="rounded-3xl overflow-hidden border border-slate-800 bg-slate-900/60 shadow-2xl shadow-black/40">
+            <img
+              src="https://aquivos.fm1.pro/wp-content/uploads/2025/12/vou-te-contar-o-que-ninguem-te-contou-3.png"
+              alt="Transição da jornada para a virada de chave"
+              className="w-full h-auto object-cover"
+              loading="lazy"
+            />
+          </div>
+        </section>
 
         {/* Bloco de conclusão pós-jornada */}
         <section className="relative w-full max-w-5xl mx-auto mt-24 mb-16 px-4">
